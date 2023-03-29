@@ -74,6 +74,16 @@ namespace BooksStoreConsoleApplication
             {
                 Console.WriteLine(Team[i]);
             }
+
+            // overriding, virtual method, hiding method
+            //BaseClass bc = new BaseClass();
+            //bc.Method1();
+
+            DerivedClass dc = new DerivedClass();
+            dc.Method1();
+
+            DerivedMethodHiding dmh = new DerivedMethodHiding();
+            dmh.Method1();
         }
     }
 }
