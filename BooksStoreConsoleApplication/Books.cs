@@ -70,6 +70,8 @@ namespace SimpleConsoleApplication
             Console.WriteLine("Name : {0}", name);
             Console.WriteLine("Author : {0}\nPublisher: {1}", author, publisher);
             Console.Write("Published Years: ");
+
+            // foreach loop can be used for iterables like array, list etc.
             foreach (int publishedYear in publishedYears)
             {
                 Console.Write($"{publishedYear}, ");

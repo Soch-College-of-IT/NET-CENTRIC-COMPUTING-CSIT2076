@@ -50,9 +50,11 @@ namespace BooksStoreConsoleApplication
             Console.WriteLine("Publisher: {0}", book2.Publisher);
             // Write prints single statement and does not add new line
             Console.Write("Published Years: ");
-            foreach (int publishedYear in  book2.PublishedYears)
+
+            // for loop similar syntax of C,C++. Length is properties of array, which gives size of array
+            for (int i=0;i<book2.PublishedYears.Length;i++)
             {
-                Console.Write("{0}, ", publishedYear);
+                Console.Write("{0}, ", book2.PublishedYears[i]);
             }
         }
     }
