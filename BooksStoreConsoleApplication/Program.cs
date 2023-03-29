@@ -56,6 +56,9 @@ namespace BooksStoreConsoleApplication
             {
                 Console.Write("{0}, ", book2.PublishedYears[i]);
             }
+
+            ArrayDemo arrayDemo = new ArrayDemo();
+            arrayDemo.ArrayDemonstration();
         }
     }
 }
