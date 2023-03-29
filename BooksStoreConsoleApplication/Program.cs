@@ -59,6 +59,9 @@ namespace BooksStoreConsoleApplication
 
             ArrayDemo arrayDemo = new ArrayDemo();
             arrayDemo.ArrayDemonstration();
+
+            StringDemo stringDemo = new StringDemo();
+            stringDemo.StringDemonstration();
         }
     }
 }
