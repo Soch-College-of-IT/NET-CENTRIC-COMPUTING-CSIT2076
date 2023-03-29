@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ArrayDemo.cs" />
     <Compile Include="Books.cs" />
+    <Compile Include="IndexersDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringDemo.cs" />

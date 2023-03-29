@@ -62,6 +62,18 @@ namespace BooksStoreConsoleApplication
 
             StringDemo stringDemo = new StringDemo();
             stringDemo.StringDemonstration();
+
+            // Accessing class elements through Indexer 
+            IndexersDemo Team = new IndexersDemo();
+            Team[0] = "Ram";
+            Team[1] = "Shyam";
+            Team[2] = "Hari";
+            Team[3] = "Gita";
+            Team[4] = "Sita";
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(Team[i]);
+            }
         }
     }
 }
