@@ -1,12 +1,13 @@
-﻿using System;
+using System;
 
 class Vehicle
-{
+{   //fields for Vehicle
     public double distance;
     public double fuel;
     public int seats;
     public string action;
 
+    //Constructor
     public Vehicle(double distance, double fuel, int seats, string action)
     {
         this.distance = distance;
@@ -15,6 +16,7 @@ class Vehicle
         this.action = action;
     }
 
+    //Methods
     public double KilometersPerLiter()
     {
         return distance / fuel;
@@ -25,31 +27,34 @@ class Vehicle
         return 100 / KilometersPerLiter();
     }
 
-    public void Steering(string direction)
-    {
-        action = "rotate steering wheel " + direction;
-    }
+   
 }
 
-class Motorcycle : Vehicle
-{
+class Motorcycle : Vehicle  //child class of Vehicle
+{    //constructor
     public Motorcycle(double distance, double fuel,int seats, string action)
         : base(distance, fuel, seats, action)
     {
     }
 
+    //methods
     public new void Steering(string direction)
     {
         action = "lean over " + direction;
     }
 }
 
-class Car : Vehicle
-{
+class Car : Vehicle  //child class of Vehicle
+{   //constructor
     public Car(double distance, double fuel,int seats, string action)
         : base(distance, fuel,seats, action)
     {
     }
+    //methods
+    public void Steering(string direction)
+    {
+        action = "rotate steering wheel " + direction;
+    } 
 }
 
 class Program
