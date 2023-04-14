@@ -44,7 +44,7 @@ public void ShowAvailableBooks() {
 }
 
 public void ReturnBooks() {
-    Console.WriteLine("Enter the book that you want to return");
+    Console.WriteLine("Enter the book that you want to return..");
     returnBook = Console.ReadLine();
     for (i = 0; i < n; i++) {
         if (arr[i] == null) {
