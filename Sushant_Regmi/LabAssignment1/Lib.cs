@@ -4,9 +4,6 @@ class Lib {
 int n, i;
 string book, returnBook;
 string[] arr = new string[100];
-
-csharp
-Copy code
 public void AddBook() {
     Console.WriteLine("Enter how many books you want to add");
     n = int.Parse(Console.ReadLine());
