@@ -1,3 +1,22 @@
+
+/*Write a program, create a class named Vehicle with attribute members traveled distance,
+fuel used, no of seats, action to steer. Add two methods to calculate the kilometers that
+can be traveled with 1 liter of fuel, and the amount of fuel needed to travel 100 km.
+Extend the class vehicle by making two new classes Motorcycle and Car. Two methods
+added should work for Motorcycle and Car class. On object creation the Car class has to
+set no of seats to 5 and the motorcycle class has to set to 2. Create a method called
+Steering which takes parameter called direction, when this method is called it has to set
+the variable action to steer to “lean over <direction>” for class motorcycle and “rotate
+steering wheel <direction>” for class car. Use concept of OOP, properties, indexers,
+constructors wherever applicable.*/
+
+
+
+
+
+
+
+
 using System;
 
 public class Vehicle
