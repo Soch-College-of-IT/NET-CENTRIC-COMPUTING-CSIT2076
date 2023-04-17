@@ -18,7 +18,7 @@ namespace QuizApplication
             Console.WriteLine("Press any key to start...\n");
             Console.ReadKey();
 
-            
+
             int score = 0;
 
             // Question 1
@@ -31,7 +31,7 @@ namespace QuizApplication
             string answer1 = Console.ReadLine();
 
             // Check answer 1
-            if (answer1.ToLower() == "3")
+            if (int.Parse(answer1)==3)
             {
                 Console.WriteLine("Correct!");
                 score++;
@@ -51,7 +51,7 @@ namespace QuizApplication
             string answer2 = Console.ReadLine();
 
             // Check answer 2
-            if (answer2.ToLower() == "3")
+            if (int.Parse(answer2) == 3)
             {
                 Console.WriteLine("Correct!");
                 score++;
@@ -71,7 +71,7 @@ namespace QuizApplication
             string answer3 = Console.ReadLine();
 
             // Check answer 3
-            if (answer3.ToLower() == "3")
+            if (int.Parse(answer3) == 3)
             {
                 Console.WriteLine("Correct!");
                 score++;
