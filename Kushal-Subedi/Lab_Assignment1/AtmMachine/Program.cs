@@ -8,8 +8,35 @@
     -Secret-pin
     -$$ balance
  */
-using System;
 
+ /* 
+ To run the app 
+ ```bash
+ cd AtmMachine
+ dotnet build . 
+ dotnet run .
+ ```
+ use any of the static users below to check the app
+ for example 
+ ```bash
+    Welcome To TvShow ATM
+    please Insert your card num :125123
+    please Enter your Pin :: 1236
+    please choose options
+    1. Deposit Money
+    2. Withdraw Money
+    3. Check Balance
+    4. Exit
+    
+    1
+    How much Rs. you like to deposite ? : 1000
+    !! Thank you for Depositing Money !!
+    Your new balance is :78000.78
+    ```
+ 
+ */
+using System;
+namespace AtmMachine{
 public class CardHolder{
 string cardNum;
 int pin;
@@ -61,7 +88,7 @@ public void setBalance(double newBalance){
 
 public static void Main(string[] args){
     void printOptions(){
-        
+        Console.WriteLine("Welcome To TvShow ATM!!")
         Console.WriteLine("please choose options");
         Console.WriteLine("1. Deposit Money");
         Console.WriteLine("2. Withdraw Money");
@@ -143,4 +170,5 @@ public static void Main(string[] args){
     Console.WriteLine("Thank You have a nice Day :)");
 }
 
+}
 }
