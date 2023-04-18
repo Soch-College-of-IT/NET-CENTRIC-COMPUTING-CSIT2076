@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+
+class Student {
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Major { get; set; }
+    public double GPA { get; set; }
+}
+
+class Program {
+    static List<Student> students = new List<Student>();
+
+    static void Main(string[] args) {
+        while (true) {
+            Console.WriteLine("Student Information System");
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("1. Add student");
+            Console.WriteLine("2. View student list");
+            Console.WriteLine("3. Search student");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice: ");
+
+            string choice = Console.ReadLine();
+            Console.WriteLine();
+
+            switch (choice) {
+                case "1":
+                    AddStudent();
+                    break;
+                case "2":
+                    ViewStudentList();
+                    break;
+                case "3":
+                    SearchStudent();
+                    break;
+                case "4":
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    break;
+            }
+
+            Console.WriteLine();
+        }
+    }
+
+    static void AddStudent() {
+        Console.WriteLine("Add Student");
+        Console.WriteLine("-----------");
+
+        Student student = new Student();
+        Console.Write("Name: ");
+        student.Name = Console.ReadLine();
+        Console.Write("Age: ");
+        student.Age = int.Parse(Console.ReadLine());
+        Console.Write("Major: ");
+        student.Major = Console.ReadLine();
+        Console.Write("GPA: ");
+        student.GPA = double.Parse(Console.ReadLine());
+
+        students.Add(student);
+
+        Console.WriteLine("Student added successfully.");
+    }
+
+    static void ViewStudentList() {
+        Console.WriteLine("View Student List");
+        Console.WriteLine("-----------------");
+
+        if (students.Count == 0) {
+            Console.WriteLine("No students found.");
+            return;
+        }
+
+        Console.WriteLine("{0,-20} {1,-10} {2,-20} {3,-10}", "Name", "Age", "Major", "GPA");
+        Console.WriteLine("---------------------------------------------------------------");
+
+        foreach (Student student in students) {
+            Console.WriteLine("{0,-20} {1,-10} {2,-20} {3,-10:0.00}", student.Name, student.Age, student.Major, student.GPA);
+        }
+    }
+
+    static void SearchStudent() {
+        Console.WriteLine("Search Student");
+        Console.WriteLine("--------------");
+
+        Console.Write("Enter student name to search: ");
+        string searchName = Console.ReadLine();
+
+        List<Student> results = students.FindAll(student => student.Name.ToLower().Contains(searchName.ToLower()));
+
+        if (results.Count == 0) {
+            Console.WriteLine("No students found.");
+            return;
+        }
+
+        Console.WriteLine("{0,-20} {1,-10} {2,-20} {3,-10}", "Name", "Age", "Major", "GPA");
+        Console.WriteLine("---------------------------------------------------------------");
+
+        foreach (Student student in results) {
+            Console.WriteLine("{0,-20} {1,-10} {2,-20} {3,-10:0.00}", student.Name, student.Age, student.Major, student.GPA);
+        }
+    }
+}
