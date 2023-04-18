@@ -94,13 +94,13 @@ namespace VehicleApp
         static void Main(string[] args)
         {
             
-            Motorcycle motorcycle = new Motorcycle(200, 10);
+            Motorcycle motorcycle = new Motorcycle(300, 10);
             Console.WriteLine("Motorcycle - Kilometers per Liter: " + motorcycle.CalculateKilometersPerLiter());
             Console.WriteLine("Motorcycle - Fuel needed for 100 Km: " + motorcycle.CalculateFuelNeededFor100Km());
             Console.WriteLine(motorcycle["left"]);
 
         
-            Car car = new Car(400, 20);
+            Car car = new Car(500, 20);
             Console.WriteLine("Car - Kilometers per Liter: " + car.CalculateKilometersPerLiter());
             Console.WriteLine("Car - Fuel needed for 100 Km: " + car.CalculateFuelNeededFor100Km());
             Console.WriteLine(car["right"]);
