@@ -88,7 +88,7 @@ public void setBalance(double newBalance){
 
 public static void Main(string[] args){
     void printOptions(){
-        Console.WriteLine("Welcome To TvShow ATM!!")
+        Console.WriteLine("Welcome To TvShow ATM!!");
         Console.WriteLine("please choose options");
         Console.WriteLine("1. Deposit Money");
         Console.WriteLine("2. Withdraw Money");
