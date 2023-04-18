@@ -1,0 +1,53 @@
+using System;
+
+namespace StudentInformationSystem
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to the Student Information System!");
+
+            // Create an array to hold student names
+            string[] studentNames = new string[3];
+
+            // Loop through the array and prompt user to enter student names
+            for (int i = 0; i < studentNames.Length; i++)
+            {
+                Console.Write("Enter name of student {0}: ", i + 1);
+                studentNames[i] = Console.ReadLine();
+            }
+
+            // Display the list of student names
+            Console.WriteLine("List of students:");
+            foreach (string name in studentNames)
+            {
+                Console.WriteLine("- " + name);
+            }
+
+            // Prompt user to enter a student name to search for
+            Console.Write("Enter a student name to search for: ");
+            string searchName = Console.ReadLine();
+
+            // Search for the student name and display the result
+            bool found = false;
+            for (int i = 0; i < studentNames.Length; i++)
+            {
+                if (studentNames[i].Equals(searchName))
+                {
+                    Console.WriteLine("{0} is found at index {1}", searchName, i);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                Console.WriteLine("{0} is not found", searchName);
+            }
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
+    }
+}
