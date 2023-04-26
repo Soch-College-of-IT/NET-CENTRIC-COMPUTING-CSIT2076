@@ -1,0 +1,225 @@
+﻿@{
+    ViewData["Title"] = "Razor Syntax Page";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Rendering HTMl with Views</h1>
+    <h2 class="display-5">Introduction to Razor Syntax</h2>
+    <p>Razor Syntax is a powerful and easiest way to write server-based code directly into your view pages. Razor is a markup syntax that allows you to embed C# Programming directly into your view page. It is generally written in the .cshtml file.</p>
+    <div>
+    <ol>
+        <li>Razor code blocks are enclosed in @@{...}</li>
+        <li>Inline expressions (variables and functions) start with @@</li>
+        <li>Code statements end with semicolon</li>
+        <li>Variables are declared with the var keyword</li>
+        <li>Strings are enclosed with quotation marks</li>
+        <li>C# code is case sensitive</li>
+        <li>C# files have the extension .cshtml</li>
+    </ol>
+    </div>
+    <h3>Example 1: Use @@{...} block to write C# code</h3>
+    <div class="jumbotron">
+        <h2 style="color:chocolate">Welcome to Computer Shop Management</h2>
+    </div>
+    <div>
+        @{
+            for (int i = 0; i < 5; i++)
+            {
+                <h3 style="color:deeppink">Hello world @i</h3>
+            }
+        }
+    </div>
+    <br/>
+    <h3>Example 2: All the inline expressions like variables and functions starts with @@</h3>
+    <div>
+        @{
+            int p = 10;
+            <h2>@p</h2>
+
+            <h3><i>Today Date is @DateTime.Now.ToShortDateString()</i></h3>
+
+        }
+    </div>
+    <br />
+    <h3>Example 3: Variables are declared with the var keyword and all the code statements end with a semicolon(;)</h3>
+    <div>
+        @{
+            var a = 5;
+            var b = 10;
+            var result = a + b;
+            <h2>Addition of @a + @b = @result</h2>
+
+        }
+    </div>
+    <br />
+    <h3>Example 4: Keep String value within double quotes (" ")</h3>
+    <div>
+        @{
+            var str = "Hello World";
+            <h3>@str</h3>
+        }
+    </div>
+    <br />
+    <h3>Example 5: Use HTML Markup for adding HTML code inside Razor block</h3>
+    <div>
+        @{
+            var str1 = "Hello World";
+            <h3>@str1</h3>
+            <span>This is Text inside Razor.</span>
+        }
+    </div>
+    <br />
+    <h3>Example 6: Use Double @@@@, if you want to print single @@</h3>
+    <div>
+        @{
+            var price1 = 30;
+            <h2>You can get 1GB Data @@ of @price1</h2>
+        }
+    </div>
+    <br />
+    <h3>Example 7: Control Statement: if, else if and else</h3>
+    <div>
+        @{
+            var price = 45;
+            if (@price > 30)
+            {
+                <h3>Price is Higher than 30.</h3>
+            }
+            else if (@price == 30)
+            {
+                <h3>Price is Equal to 30.</h3>
+            }
+            else
+            {
+                <h3>Price is Lower than 30.</h3>
+            }
+        }
+    </div>
+<br />
+    <h3>Example 8: Switch Case</h3>
+    <div>
+        @{
+            var Days = DateTime.Now.DayOfWeek.ToString();
+
+            switch (Days)
+            {
+                case "Sunday":
+                    <strong>Its Holiday</strong>
+                    break;
+                case "Monday":
+                    <strong>Oh no! It's Monday Again</strong>
+                    break;
+                case "Tuesday":
+                    <strong>Go to Work. It's Tuesday</strong>
+                    break;
+                case "Wednesday":
+                    <strong>Continue to Work. It's Wednesday</strong>
+                    break;
+                case "Thursday":
+                    <strong>Continue to Work. It's Thursday</strong>
+                    break;
+                case "Friday":
+                    <strong>Yeah! It's Friday.</strong>
+                    break;
+                case "Saturday":
+                    <strong>Hurreyy... It's Saturday.</strong>
+                    break;
+                default:
+                    <strong>Its Mystrious. I don't know the day name.</strong>
+                    break;
+            }
+        }
+
+    </div>
+    <br />
+    <h3>Example 9: Loop Statement: for, foreach, while, do while</h3>
+    <div>
+        @{
+            <h3>For Loop Example</h3>
+            for (var i = 0; i < 5; i++)
+            {
+                <strong>@i </strong>
+            }
+
+            <h3>While Loop Example</h3>
+            var j = 0;
+            while (j < 5)
+            {
+                <strong>@j </strong>
+                j++;
+            }
+
+            <h3>Do While Loop Example</h3>
+            var k = 0;
+            do
+            {
+                <strong>@k </strong>
+                k++;
+            }
+            while (k < 5);
+        }
+
+    </div>
+
+    <br />
+    <h3>Example 10: Foreach and Array</h3>
+    <div>
+        @{
+            int[] arr = { 1, 3, 5, 7, 11, 13, 17, 19 };
+            foreach (int x in arr)
+            {
+                <span>@x, </span>
+            }
+        }
+
+    </div>
+<br />
+    <h3>Example 11: Handling Errors with Try Catch</h3>
+    <div>
+        @{
+            try
+            {
+                int num, den, res;
+                num = 5;
+                den = 0;
+                res = num / den;
+                <span>@res </span>
+            }
+            catch (Exception ex)
+            {
+                <span>@ex.ToString()</span>
+            }
+        }
+
+    </div>
+<br />
+    <h3>Example 12: @@using : Add NameSpace</h3>
+    <div>
+        @using System.IO;
+        @using System.Data.SqlClient;
+        @using System.Configuration;
+        @{
+            // Your Code Here.
+        }
+
+    </div>
+
+    <br />
+    <h3>Example 13: Comments in Razor</h3>
+    <div>
+    @@*
+    @{
+    /* C# comment */
+    // Another C# comment
+    }
+    <!-- HTML comment -->
+    *@@
+    </div>
+    <br />
+    <h3>Example 14: @@model: Accessing Model data</h3>
+    <div>
+        <p>The @@model command is used for adding and accessing model variables and data into the view page</p>
+        @@model LoginViewModel
+    </div>
+
+</div>
