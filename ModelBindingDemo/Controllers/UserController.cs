@@ -20,7 +20,7 @@ namespace ModelBindingDemo.Controllers
             }
             else
             {
-                return Content("Model could not be validated!");
+                return View(webUser);
             }
             // Update in DB
             //return Content($"User {webUser.FirstName} updated!");

@@ -4,7 +4,7 @@ namespace ModelBindingDemo.Models
 {
     public class UserViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="First Name is required")]
         [StringLength(25)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
