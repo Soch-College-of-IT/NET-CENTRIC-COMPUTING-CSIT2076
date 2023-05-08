@@ -14,8 +14,16 @@ namespace ModelBindingDemo.Controllers
         [HttpPost]
         public IActionResult SimpleBinding(UserViewModel webUser)
         {
+            if (ModelState.IsValid)
+            {
+                return Content("Thank you!" + $"User {webUser.FirstName} updated!");
+            }
+            else
+            {
+                return Content("Model could not be validated!");
+            }
             // Update in DB
-            return Content($"User {webUser.FirstName} updated!");
+            //return Content($"User {webUser.FirstName} updated!");
         }
     }
 }
