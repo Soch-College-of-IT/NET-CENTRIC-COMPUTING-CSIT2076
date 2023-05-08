@@ -1,6 +1,7 @@
 ﻿@model ModelBindingDemo.Models.UserViewModel;
 @using(var form = Html.BeginForm())
 {
+    @Html.ValidationSummary()
     <div>
         @Html.LabelFor(m => m.FirstName)
         @Html.TextBoxFor(m => m.FirstName)
