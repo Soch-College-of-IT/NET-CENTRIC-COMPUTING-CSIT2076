@@ -8,7 +8,7 @@ namespace ModelBindingDemo.Controllers
         [HttpGet]
         public IActionResult SimpleBinding()
         {
-            return View(new UserViewModel() { FirstName = "Alice", LastName = "Hansen"});
+            return View(new UserViewModel() { FirstName = "Alice", LastName = "Hansen", Email = "alice@example.com"});
         }
 
         [HttpPost]
