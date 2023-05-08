@@ -1,0 +1,14 @@
+﻿@model ModelBindingDemo.Models.UserViewModel;
+@using(var form = Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName)
+    </div>
+    <input type="submit" value="Submit"/>
+}
+

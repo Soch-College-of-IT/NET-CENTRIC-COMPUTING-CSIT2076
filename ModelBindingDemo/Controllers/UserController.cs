@@ -8,7 +8,14 @@ namespace ModelBindingDemo.Controllers
         [HttpGet]
         public IActionResult SimpleBinding()
         {
-            return View(new WebUser() { FirstName = "Alice", LastName = "Hansen"});
+            return View(new UserViewModel() { FirstName = "Alice", LastName = "Hansen"});
+        }
+
+        [HttpPost]
+        public IActionResult SimpleBinding(UserViewModel webUser)
+        {
+            // Update in DB
+            return Content($"User {webUser.FirstName} updated!");
         }
     }
 }
