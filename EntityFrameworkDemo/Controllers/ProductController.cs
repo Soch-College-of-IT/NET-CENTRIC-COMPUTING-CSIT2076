@@ -14,7 +14,7 @@ namespace EntityFrameworkDemo.Controllers
 
         public IActionResult Product()
         {
-            List productList = new List();
+            List<Product> productList = new List<Product>();
             var dbconfig = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json").Build();
@@ -25,6 +25,7 @@ namespace EntityFrameworkDemo.Controllers
                 using (SqlConnection connection = new SqlConnection(dbconnectionStr))
                 {
                     SqlCommand command = new SqlCommand(sql, connection);
+                    connection.Open();
                     using (SqlDataReader dataReader = command.ExecuteReader())
                     {
                         while (dataReader.Read())
@@ -42,7 +43,7 @@ namespace EntityFrameworkDemo.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return View(productList);
         }
@@ -85,7 +86,7 @@ namespace EntityFrameworkDemo.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return RedirectToAction("Product");
         }
@@ -143,6 +144,8 @@ namespace EntityFrameworkDemo.Controllers
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@Id", product.Id);
                                 cmd.Parameters.AddWithValue("@ProductName", product.ProductName);
+                                cmd.Parameters.AddWithValue("@ProductDescription", product.ProductDescription);
+                                cmd.Parameters.AddWithValue("@ProductCost", product.ProductCost);
                                 cmd.Parameters.AddWithValue("@Stock", product.Stock);
                                 connection.Open();
                                 cmd.ExecuteNonQuery();
@@ -154,7 +157,7 @@ namespace EntityFrameworkDemo.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return RedirectToAction("Product");
         }
@@ -180,7 +183,7 @@ namespace EntityFrameworkDemo.Controllers
                     }
                     catch (SqlException ex)
                     {
-                        throw;
+                        throw ex;
                     }
                     connection.Close();
                 }
