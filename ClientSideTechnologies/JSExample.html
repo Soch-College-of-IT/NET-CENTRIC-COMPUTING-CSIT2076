@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Example</title>
+</head>
+
+<body>
+    <!-- using document.write() -->
+    <script>
+        document.write("Hello World!");
+        document.write("<br>");
+        document.write("<h1>Hello Student!</h1>");
+        document.write("<br>");
+        document.write("<p>This is a paragraph.</p>");
+    </script>
+    <br>
+    <!-- using variables -->
+    <script>
+        var x = 10;
+        var y = 20;
+        var z = x + y;
+        document.write(z);
+        document.write("<br>");
+        document.write("The sum of " + x + " and " + y + " is " + z + ".")
+    </script>
+    <br>
+    <!-- using functions -->
+    <script>
+        function myFunction() {
+            document.write("Hello World!");
+        }
+        myFunction();
+    </script>
+    <br>
+    <!-- using function with parameters -->
+    <script>
+        function myFunction(x, y) {
+            document.write(x + y);
+        }
+        myFunction(10, 20);
+    </script>
+    <br>
+    <!-- using function with return value -->
+    <script>
+        function myFunction(x, y) {
+            return x + y;
+        }
+        document.write(myFunction(10, 20));
+    </script>
+    <br>
+    <!-- use of loops -->
+    <script>
+        var i;
+        for (i = 0; i < 5; i++) {
+            document.write(i);
+            document.write("<br>");
+        }
+    </script>
+    <br>
+    <!-- use of conditional statements -->
+    <script>
+        var x = 10;
+        if (x > 5) {
+            document.write("x is greater than 5");
+        } else {
+            document.write("x is less than or equal to 5");
+        }
+    </script>
+    <br>
+    <!-- use of objects -->
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+        document.write(person.firstName + " is " + person.age + " years old.");
+    </script>
+    <br>
+    <!-- use of arrays -->
+    <script>
+        var cars = ["Mercedes", "Volvo", "BMW"];
+        document.write(cars[0]);
+    </script>
+    <br>
+    <!-- use of events -->
+    <button onclick="myFunction()">Click Me</button>
+    <script>
+        function myFunction() {
+            alert("Hello World!");
+        }
+    </script>
+    <br>
+    <!-- use of DOM -->
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        document.getElementById("demo1").innerHTML = "Hello World!";
+        document.getElementById("demo2").innerHTML = 5 + 6;
+    </script>
+    <br>
+    <!-- use of DOM with events -->
+    <button onclick="document.getElementById('demo3').innerHTML = Date()">The time is?</button>
+    <p id="demo3"></p>
+
+    <!-- string methods -->
+    <script>
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        document.write(txt.length);
+        document.write("<br>");
+        document.write(txt.indexOf("K"));
+        document.write("<br>");
+        document.write(txt.slice(3, 5));
+        document.write("<br>");
+        document.write(txt.replace("ABC", "abc"));
+        document.write("<br>");
+        document.write(txt.toUpperCase());
+        document.write("<br>");
+        document.write(txt.toLowerCase());
+        document.write("<br>");
+        document.write(txt.concat("123"));
+        document.write("<br>");
+        document.write(txt.charAt(0));
+        document.write("<br>");
+        document.write(txt.charCodeAt(0));
+        document.write("<br>");
+        document.write(txt.split(""));
+    </script>
+</body>
+
+</html>
