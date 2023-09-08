@@ -1,0 +1,72 @@
+using System;
+
+class Vehicle
+{
+    private double traveledDistance;
+    private double fuelUsed;
+    private int noOfSeats;
+    protected string actionToSteer;
+
+    public Vehicle(double distance, double fuel, int seats)
+    {
+        traveledDistance = distance;
+        fuelUsed = fuel;
+        noOfSeats = seats;
+    }
+
+    public double CalculateKmsPerLiter()
+    {
+        return traveledDistance / fuelUsed;
+    }
+
+    public double CalculateFuelNeededFor100Kms()
+    {
+        return 100 / CalculateKmsPerLiter();
+    }
+
+    public virtual void Steering(string direction)
+    {
+        actionToSteer = "rotate steering wheel " + direction;
+    }
+}
+
+class Motorcycle : Vehicle
+{
+    public Motorcycle(double distance, double fuel) : base(distance, fuel, 2)
+    {
+    }
+
+    public override void Steering(string direction)
+    {
+        actionToSteer = "lean over " + direction;
+    }
+}
+
+class Car : Vehicle
+{
+    public Car(double distance, double fuel) : base(distance, fuel, 5)
+    {
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Vehicle vehicle1 = new Vehicle(500, 50, 4);
+        Console.WriteLine("Kilometers that can be traveled with 1 liter of fuel: " + vehicle1.CalculateKmsPerLiter());
+        Console.WriteLine("Amount of fuel needed to travel 100 km: " + vehicle1.CalculateFuelNeededFor100Kms());
+
+        Motorcycle motorcycle1 = new Motorcycle(200, 20);
+        Console.WriteLine("Kilometers that can be traveled with 1 liter of fuel for motorcycle: " + motorcycle1.CalculateKmsPerLiter());
+        Console.WriteLine("Amount of fuel needed to travel 100 km for motorcycle: " + motorcycle1.CalculateFuelNeededFor100Kms());
+        motorcycle1.Steering("left");
+        Console.WriteLine("Action to steer for motorcycle: " + motorcycle1.actionToSteer);
+
+        Car car1 = new Car(300, 30);
+        Console.WriteLine("Kilometers that can be traveled with 1 liter of fuel for car: " + car1.CalculateKmsPerLiter());
+        Console.WriteLine("Amount of fuel needed to travel 100 km for car: " + car1.CalculateFuelNeededFor100Kms());
+        car1.Steering("right");
+        Console.WriteLine("Action to steer for car: " + car1.actionToSteer);
+    }
+}

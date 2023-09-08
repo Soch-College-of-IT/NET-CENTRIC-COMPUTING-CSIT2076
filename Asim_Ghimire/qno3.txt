@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Enter your age: ");
+        int age = int.Parse(Console.ReadLine());
+
+        if (age >= 18)
+        {
+            Console.WriteLine("Person can get citizenship and vote");
+        }
+        else if (age >= 16)
+        {
+            Console.WriteLine("Person can get citizenship but cannot vote");
+        }
+        else
+        {
+            Console.WriteLine("Person cannot get citizenship");
+        }
+    }
+}
+    /*Explanation: We have used if-else statements to check the given conditions based on the age of the person. If the age is greater than or equal to 18, the person can get citizenship and vote. If the age is between 16 and 18 (inclusive), the person can get citizenship but cannot vote. If the age is less than 16, the person cannot get citizenship. Since we have only three conditions to check, using if-else statements is a simple and straightforward approach. We can also use switch statements, but it would be less readable and less efficient in this case.*/

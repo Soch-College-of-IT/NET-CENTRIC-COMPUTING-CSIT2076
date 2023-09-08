@@ -1,0 +1,39 @@
+using System;
+
+namespace StudentInformationSystem
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string studentName, course, section;
+            int studentID;
+            
+            Console.WriteLine("Welcome to the Student Information System!");
+            Console.WriteLine("Please enter the following details:");
+            
+            Console.Write("Student ID: ");
+            studentID = int.Parse(Console.ReadLine());
+            
+            Console.Write("Student Name: ");
+            studentName = Console.ReadLine();
+            
+            Console.Write("Course: ");
+            course = Console.ReadLine();
+            
+            Console.Write("Section: ");
+            section = Console.ReadLine();
+            
+            Console.WriteLine();
+            Console.WriteLine("Student Information Summary:");
+            Console.WriteLine($"Student ID: {studentID}");
+            Console.WriteLine($"Student Name: {studentName}");
+            Console.WriteLine($"Course: {course}");
+            Console.WriteLine($"Section: {section}");
+            
+            Console.WriteLine();
+            Console.WriteLine("Thank you for using the Student Information System!");
+            Console.ReadKey();
+        }
+    }
+}
